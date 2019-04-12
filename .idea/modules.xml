@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/yemanager/yeclient/yeclient.iml" filepath="$PROJECT_DIR$/yemanager/yeclient/yeclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yemanager/yemanager.iml" filepath="$PROJECT_DIR$/yemanager/yemanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yeparent/yeparent.iml" filepath="$PROJECT_DIR$/yeparent/yeparent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yemanager/yeserver/yeserver.iml" filepath="$PROJECT_DIR$/yemanager/yeserver/yeserver.iml" />
+    </modules>
+  </component>
+</project>
