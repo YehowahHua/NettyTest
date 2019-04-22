@@ -38,16 +38,19 @@ public class EchoServer
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(group)
-                    .channel(NioServerSocketChannel.class)
-                    .localAddress(new InetSocketAddress(port))
+                    .channel(NioServerSocketChannel.class)// 指定所使用的NIO传输Channel
+                    .localAddress(new InetSocketAddress(port))// 使用制定的端口设置套接字地址
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
+                            //EchoServerHandler被标注为@Shareable,所以我们可以总是使用同样的实例
                             ch.pipeline().addLast(serverHandler);
                         }
                     });
 
+            //异步的绑定服务器；调用sync()方法阻塞等待直到绑定完成
             ChannelFuture future = bootstrap.bind().sync();
+            //获取Channel的CloseFuture，并且阻塞当前线程直到它完成
             future.channel().closeFuture().sync();
         }finally{
             group.shutdownGracefully().sync();
