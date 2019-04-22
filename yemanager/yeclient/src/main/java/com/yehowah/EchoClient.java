@@ -10,11 +10,6 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.net.InetSocketAddress;
 
-
-/**
- * Hello world!
- *
- */
 public class EchoClient
 {
     private final String host;
@@ -31,8 +26,7 @@ public class EchoClient
         String host = args[0];
         int port = Integer.parseInt(args[1]);
         new EchoClient(host,port).start();
-
-        System.out.println( "Hello World!" );
+        System.out.println( "Hello World!--netty client--"+host+":"+port );
     }
 
     public void start() throws Exception{
@@ -53,9 +47,5 @@ public class EchoClient
         }finally {
             group.shutdownGracefully().sync();
         }
-
-
     }
-
-
 }

@@ -27,9 +27,8 @@ public class EchoServer
             return;
         }
         int port = Integer.parseInt(args[0]);
+        System.out.println( "Hello World!--netty server--"+port );
         new EchoServer(port).start();
-
-        System.out.println( "Hello World!" );
     }
 
     public void start() throws Exception {

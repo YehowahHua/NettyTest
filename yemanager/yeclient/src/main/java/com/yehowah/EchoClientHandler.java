@@ -17,7 +17,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf>{
     //在到服务器的连接已经建立之后将被调用
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty client rocks",CharsetUtil.UTF_8));
+        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty msg rocks",CharsetUtil.UTF_8));
         System.out.println("<*-- channelActive --*>");
     }
 
